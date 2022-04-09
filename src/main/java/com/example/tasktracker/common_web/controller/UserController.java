@@ -1,7 +1,7 @@
 package com.example.tasktracker.common_web.controller;
 
 import com.example.tasktracker.common_service.UserService;
-import com.example.tasktracker.dto.create.UserRegisterDTO;
+import com.example.tasktracker.dto.create.CreateUserDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,12 +32,12 @@ public class UserController {
     @GetMapping("/register")
     public String registerUser(Model model) {
         if (!model.containsAttribute("user"))
-            model.addAttribute("userForm", new UserRegisterDTO());
+            model.addAttribute("userForm", new CreateUserDTO());
         return "register";
     }
 
     @PostMapping("/register")
-    public String registerUser(@Valid UserRegisterDTO form,
+    public String registerUser(@Valid CreateUserDTO form,
                                BindingResult validationResult,
                                RedirectAttributes attributes) {
         attributes.addFlashAttribute("userForm", form);

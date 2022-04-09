@@ -3,7 +3,7 @@ package com.example.tasktracker.common_service;
 import com.example.tasktracker.common_data.entity.User;
 import com.example.tasktracker.common_data.repository.UserRepository;
 import com.example.tasktracker.dto.UserDTO;
-import com.example.tasktracker.dto.create.UserRegisterDTO;
+import com.example.tasktracker.dto.create.CreateUserDTO;
 import com.example.tasktracker.exception.UserAlreadyExistsException;
 import com.example.tasktracker.exception.UserNotFoundException;
 import lombok.AllArgsConstructor;
@@ -16,7 +16,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder _encoder;
 
-    public UserDTO register(UserRegisterDTO form) {
+    public UserDTO register(CreateUserDTO form) {
         if (userRepository.existsByEmail(form.getEmail()))
             throw new UserAlreadyExistsException();
         var user = User.builder()
