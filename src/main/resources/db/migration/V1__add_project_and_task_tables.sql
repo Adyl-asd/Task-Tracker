@@ -4,8 +4,8 @@ CREATE TABLE `project`
 (
     `id`         INT AUTO_INCREMENT NOT NULL,
     `name`       VARCHAR(128)       NOT NULL,
-    `start_date` DATE               NOT NULL,
-    `end_date`   DATE               NOT NULL,
+    `start_date` DATETIME             NOT NULL,
+    `end_date`   DATETIME             NOT NULL,
     `status`     VARCHAR(64)        NOT NULL,
     `priority`   INT                NOT NULL,
     PRIMARY KEY (`id`)
