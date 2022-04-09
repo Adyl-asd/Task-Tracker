@@ -1,4 +1,4 @@
-USE `review-service`;
+USE `task_tracker`;
 
 CREATE TABLE `user`
 (
