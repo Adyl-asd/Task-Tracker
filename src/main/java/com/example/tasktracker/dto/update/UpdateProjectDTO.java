@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class UpdateProjectDTO {
-    private Long id;
     private String name;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
