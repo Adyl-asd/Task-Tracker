@@ -81,7 +81,7 @@
         </div>
     </footer>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
     <#list scripts as scripts>
         <script src="${scripts}"></script>
     </#list>
