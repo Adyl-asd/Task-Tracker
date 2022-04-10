@@ -12,5 +12,5 @@ CREATE TABLE `user`
     UNIQUE INDEX `email_unique` (`email` ASC)
 );
 
-INSERT INTO `user` (email, password, username, role) VALUES
-('admin@admin.com', '$2a$10$kJYT8r.dSRmlaj8AB8WWLOEdO2QRYjfsQ84gadPFiUp.zlajJFiEy', 'admin', 'ADMIN');
+INSERT INTO `user` (email, password, username, role)
+VALUES ('admin@admin.com', '$2a$10$kJYT8r.dSRmlaj8AB8WWLOEdO2QRYjfsQ84gadPFiUp.zlajJFiEy', 'admin', 'ADMIN');

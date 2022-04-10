@@ -4,7 +4,8 @@ import com.example.tasktracker.common_data.entity.Project;
 import com.example.tasktracker.common_data.enumeration.ProjectStatus;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 @Getter
 @Setter
@@ -14,8 +15,8 @@ import java.time.LocalDateTime;
 public class ProjectDTO {
     private Long id;
     private String name;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private ProjectStatus status;
     private int priority;
 

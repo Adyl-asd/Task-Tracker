@@ -1,6 +1,7 @@
 package com.example.tasktracker.common_data.entity;
 
 import com.example.tasktracker.common_data.enumeration.TaskStatus;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Task {
     private String name;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private TaskStatus status;
 
     @Column
@@ -31,5 +33,6 @@ public class Task {
     private int priority;
 
     @ManyToOne
+    @JsonBackReference
     private Project project;
 }
