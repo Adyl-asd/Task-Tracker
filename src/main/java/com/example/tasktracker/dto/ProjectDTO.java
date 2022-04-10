@@ -3,6 +3,7 @@ package com.example.tasktracker.dto;
 import com.example.tasktracker.common_data.entity.Project;
 import com.example.tasktracker.common_data.enumeration.ProjectStatus;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -15,8 +16,13 @@ import java.time.LocalDate;
 public class ProjectDTO {
     private Long id;
     private String name;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate startDate;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate endDate;
+
     private ProjectStatus status;
     private int priority;
 
