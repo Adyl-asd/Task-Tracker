@@ -1,9 +1,13 @@
 $(document).ready(function () {
     const updateButton = $('#update-button');
-    updateButton.on('click', function () {
+    updateButton.on('click', function (e) {
+        // Check if all inputs are full before ajax request
         if (!$('#inputName').val() || !$('#inputDescription').val() || !$('#inputStatus').val() || !$('#inputPriority').val()) {
             alert('Filling all fields is required!')
         } else {
+            // Prevents multiple button clicks firing new events
+            e.stopImmediatePropagation();
+            e.preventDefault();
             $.ajax({
                 url : `/api/task/${$('#inputTaskId').val()}`,
                 type : 'PUT',
