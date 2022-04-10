@@ -1,8 +1,9 @@
 <#import "partials/main.ftlh" as main/>
 
-<@main.renderWith title="Edit Project">
+<@main.renderWith title="Edit Project" scripts=["js/project_update.js"]>
     <div class="container mt-3">
         <form>
+            <input type="hidden" id="inputId" value="${project.id}">
             <div class="mb-3">
                 <label for="inputName" class="form-label">Name</label>
                 <input type="text" class="form-control" id="inputName" value="${project.name}">
@@ -33,7 +34,7 @@
                     <option value="3">3</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
         </form>
+        <button id="update-button" class="btn btn-primary">Update</button>
     </div>
 </@main.renderWith>
