@@ -33,5 +33,6 @@
             </div>
         </form>
         <button id="update-button" class="btn btn-primary">Update</button>
+        <a href="/project/${projectId}/task/${task.id}" type="button" class="btn btn-outline-primary">Back to Task</a>
     </div>
 </@main.renderWith>

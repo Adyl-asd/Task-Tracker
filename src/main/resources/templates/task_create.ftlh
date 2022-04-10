@@ -22,5 +22,6 @@
             </div>
         </form>
         <button id="create-button" class="btn btn-primary">Create</button>
+        <a class="btn btn-primary" href="/project/${projectId}" role="button">Back to Project</a>
     </div>
 </@main.renderWith>

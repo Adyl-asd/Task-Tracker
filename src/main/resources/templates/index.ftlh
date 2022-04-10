@@ -2,6 +2,7 @@
 
 <@main.renderWith title="Projects">
     <div class="container">
+        <a class="btn btn-primary my-3" href="/project/new" role="button">Create New Project</a>
             <table class="table">
                 <thead>
                 <tr>
@@ -24,6 +25,5 @@
                 </#list>
                 </tbody>
             </table>
-
     </div>
 </@main.renderWith>

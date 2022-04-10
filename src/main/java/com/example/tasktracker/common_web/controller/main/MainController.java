@@ -20,7 +20,7 @@ public class MainController {
     @GetMapping
     public String getProjects(Model model) {
         model.addAttribute("projects", projectService.getAllProjects());
-        return "projects";
+        return "index";
     }
 
     // Single project page

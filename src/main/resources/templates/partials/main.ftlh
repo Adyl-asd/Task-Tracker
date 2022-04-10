@@ -36,11 +36,9 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
-                    <#if user??>
                         <li class="nav-item">
-                            <a class="nav-link" href="/establishment/add">Create Project</a>
+                            <a class="nav-link" href="/project/new">Create Project</a>
                         </li>
-                    </#if>
                 </ul>
 
                 <#if user??>
