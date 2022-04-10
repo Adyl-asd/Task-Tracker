@@ -1,8 +1,9 @@
 <#import "partials/main.ftlh" as main/>
 
-<@main.renderWith title="New Task">
+<@main.renderWith title="New Task" scripts=["js/task_create.js"]>
     <div class="container mt-3">
         <form>
+            <input type="hidden" id="inputProjectId" value="${projectId}">
             <div class="mb-3">
                 <label for="inputName" class="form-label">Name</label>
                 <input type="text" class="form-control" id="inputName">
@@ -19,7 +20,7 @@
                     <option value="3">3</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
         </form>
+        <button id="create-button" class="btn btn-primary">Create</button>
     </div>
 </@main.renderWith>

@@ -63,6 +63,7 @@ public class MainController {
         return "task";
     }
 
+    // Create new task page
     @GetMapping("/project/{id}/task/new")
     public String createTask(@PathVariable Long id,
                              Model model) {
@@ -75,7 +76,8 @@ public class MainController {
     public String updateTask(@PathVariable Long id,
                              @PathVariable Long taskId,
                              Model model) {
-        model.addAttribute("task", taskService.getTaskById(id));
+        model.addAttribute("task", taskService.getTaskById(taskId));
+        model.addAttribute("projectId", id);
         model.addAttribute("statuses", TaskStatus.values());
         return "task_update";
     }
@@ -85,7 +87,7 @@ public class MainController {
     public String deleteTask(@PathVariable Long id,
                              @PathVariable Long taskId,
                              Model model) {
-        model.addAttribute("task", taskService.getTaskById(id));
+        model.addAttribute("task", taskService.getTaskById(taskId));
         model.addAttribute("projectId", id);
         return "task_delete";
     }
