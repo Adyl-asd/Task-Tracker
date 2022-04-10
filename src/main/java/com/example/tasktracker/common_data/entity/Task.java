@@ -5,6 +5,10 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -20,16 +24,24 @@ public class Task {
     private Long id;
 
     @Column
+    @NotNull
+    @Size(max = 128)
     private String name;
 
     @Column
     @Enumerated(EnumType.STRING)
+    @NotNull
     private TaskStatus status;
 
     @Column
+    @NotNull
+    @Size(max = 512)
     private String description;
 
     @Column
+    @NotNull
+    @Min(1)
+    @Max(3)
     private int priority;
 
     @ManyToOne

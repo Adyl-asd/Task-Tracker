@@ -16,6 +16,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder _encoder;
 
+    // Creates a new user from CreateUserDTO
     public UserDTO register(CreateUserDTO form) {
         if (userRepository.existsByEmail(form.getEmail()))
             throw new UserAlreadyExistsException();
@@ -28,6 +29,7 @@ public class UserService {
         return UserDTO.from(user);
     }
 
+    // Returns a user by it's Email
     public UserDTO getByEmail(String email) {
         var user = userRepository.findByEmail(email)
                 .orElseThrow(UserNotFoundException::new);

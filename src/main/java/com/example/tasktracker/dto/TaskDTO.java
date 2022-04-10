@@ -4,6 +4,8 @@ import com.example.tasktracker.common_data.entity.Task;
 import com.example.tasktracker.common_data.enumeration.TaskStatus;
 import lombok.*;
 
+import javax.validation.constraints.NotNull;
+
 @Getter
 @Setter
 @Builder
@@ -11,10 +13,20 @@ import lombok.*;
 @NoArgsConstructor
 public class TaskDTO {
     private Long id;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private TaskStatus status;
+
+    @NotNull
     private String description;
+
+    @NotNull
     private int priority;
+
+    @NotNull
     private Long projectId;
 
     // Method maps Task entity into TaskDTO entity

@@ -5,6 +5,7 @@ import com.example.tasktracker.common_data.enumeration.ProjectStatus;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 
@@ -15,15 +16,22 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class ProjectDTO {
     private Long id;
+
+    @NotNull
     private String name;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull
     private LocalDate startDate;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull
     private LocalDate endDate;
 
+    @NotNull
     private ProjectStatus status;
+
+    @NotNull
     private int priority;
 
     // Method maps Project entity into ProjectDTO entity

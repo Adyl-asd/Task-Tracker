@@ -3,6 +3,8 @@ package com.example.tasktracker.common_data.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 
 @Data
@@ -17,12 +19,16 @@ public class User {
     private Integer id;
 
     @Column
+    @Email
+    @NotNull
     private String email;
 
     @Column
+    @NotNull
     private String password;
 
     @Column
+    @NotNull
     private String username;
 
     @Column

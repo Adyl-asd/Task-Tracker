@@ -16,18 +16,22 @@ import java.util.List;
 public class ProjectService {
     private final ProjectRepository repository;
 
+    // Returns all projects
     public List<Project> getAllProjects() {
         return repository.findAll();
     }
 
+    // Returns a single project by id
     public Project getProjectById(Long id) {
         return repository.findById(id).orElseThrow();
     }
 
+    // Returns a ProjectDTO by id
     public ProjectDTO getProjectDTOById(Long id) {
         return ProjectDTO.from(getProjectById(id));
     }
 
+    // Creates project based on data from CreateProjectDTO
     public ProjectDTO createProject(CreateProjectDTO dto) {
         Project project = repository.save(Project.builder()
                 .name(dto.getName())
@@ -39,6 +43,7 @@ public class ProjectService {
         return ProjectDTO.from(project);
     }
 
+    // Updates project based on data from UpdateProjectDTO
     public ProjectDTO updateProject(Long id, UpdateProjectDTO dto) {
         Project project = getProjectById(id);
         project.setName(dto.getName());
@@ -50,6 +55,7 @@ public class ProjectService {
         return ProjectDTO.from(project);
     }
 
+    // Deletes existing project by id
     public String deleteProject(Long id) {
         repository.deleteById(id);
         return "Project with id " + id + " has been deleted";
