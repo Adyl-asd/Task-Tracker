@@ -31,4 +31,5 @@ However, if you don't, you can assemble the .jar file using maven and launch the
 After all that is done, you should be set.
 
 http://localhost:8080/ - should direct you to app
+
 http://localhost:8080/swagger-ui/ - Swagger UI
