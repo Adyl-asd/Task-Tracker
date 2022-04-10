@@ -29,13 +29,13 @@ public class TaskService {
         return TaskDTO.from(getTaskById(id));
     }
 
-    public TaskDTO createTask(Long projectId, CreateTaskDTO dto) {
+    public TaskDTO createTask(CreateTaskDTO dto) {
         Task task = repository.save(Task.builder()
                 .name(dto.getName())
                 .status(TaskStatus.TO_DO)
                 .description(dto.getDescription())
                 .priority(dto.getPriority())
-                .project(projectService.getProjectById(projectId))
+                .project(projectService.getProjectById(dto.getProjectId()))
                 .build());
         return TaskDTO.from(task);
     }

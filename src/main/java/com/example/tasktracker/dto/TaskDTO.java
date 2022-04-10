@@ -15,7 +15,7 @@ public class TaskDTO {
     private TaskStatus status;
     private String description;
     private int priority;
-    private ProjectDTO project;
+    private Long projectId;
 
     // Method maps Task entity into TaskDTO entity
     public static TaskDTO from (Task task) {
@@ -25,7 +25,7 @@ public class TaskDTO {
                 .status(task.getStatus())
                 .description(task.getDescription())
                 .priority(task.getPriority())
-                .project(ProjectDTO.from(task.getProject()))
+                .projectId(task.getProject().getId())
                 .build();
     }
 }

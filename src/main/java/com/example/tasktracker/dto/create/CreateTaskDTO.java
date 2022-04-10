@@ -9,4 +9,5 @@ public class CreateTaskDTO {
     private String name;
     private String description;
     private int priority;
+    private Long projectId;
 }

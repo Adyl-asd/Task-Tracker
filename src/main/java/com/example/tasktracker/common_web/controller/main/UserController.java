@@ -1,4 +1,4 @@
-package com.example.tasktracker.common_web.controller;
+package com.example.tasktracker.common_web.controller.main;
 
 import com.example.tasktracker.common_service.UserService;
 import com.example.tasktracker.dto.create.CreateUserDTO;
